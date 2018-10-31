@@ -1,0 +1,35 @@
+
+uses a struture state which has variables:
+struct State {
+        uint256 amount;
+        bool isCredit;
+    }
+
+functions: 
+1. create group
+	use: creates a new group
+	Args: name,address Array,address of Token,timeout
+	checks: user length between 1-4
+			group name is not resused
+	emits: GroupCreated
+2. fundUser
+	use: transfer ERC20 tokens to a user
+	Args: name,address,amount
+	checks: user in group, group closed are not
+	emits: UserBalanceUpdated
+
+3. closeGroup
+	use: closes a group
+	Args: groupName, amounts, is Credits,signatures(r,s,v)
+4. pullFunds
+	use:allows user to withdraw the funds
+	Args:name
+	checks: groupclose time initiated or not, challenge period activated or not
+5. updateState
+	use: calculates debits and credits using amounts and update state
+	Args: amounts,group name,timestamp,isCredits
+6. updateGroup
+	use: update group
+
+7. checkSigs(!!!! maybe not required)
+	use: checks signatures while updating group
