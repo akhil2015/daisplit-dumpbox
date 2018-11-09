@@ -1,9 +1,9 @@
 pragma solidity ^0.4.24;
 /* pragma experimental ABIEncoderV2; */
 
-import "openzeppelin-solidity/contracts/math/SafeMath.sol";
-import "openzeppelin-solidity/contracts/token/ERC20/ERC20.sol";
-import "openzeppelin-solidity/contracts/ECRecovery.sol";
+import "./SafeMath.sol";
+import "./ERC20.sol";
+import "./ECRecovery.sol";
 
 contract SplitETH {
     using SafeMath for uint256;
